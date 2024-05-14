@@ -1,0 +1,67 @@
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  animation: imageGrow 1s ease-out forwards; /* Apply animation */
+}
+
+.team-member h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  max-width: 600px;
+  margin: 50px auto;
+  animation: borderGrow 1s forwards;
+}
+img {
+  width: 100%;
+  height: 50%;
+}
+
+@keyframes borderGrow {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #333; /* Grow the border to #333 */
+  }
+}
+@keyframes imageGrow {
+  from {
+    transform: scale(0); /* Start from no scale */
+  }
+  to {
+    transform: scale(1); /* Grow to normal size */
+  }
+}

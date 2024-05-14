@@ -1,1 +1,5 @@
-<p>card-list works!</p>
+<div class="cards-list">
+  @for (product of products; track $index) {
+  <app-card [product]="product"></app-card>
+  }
+</div>
