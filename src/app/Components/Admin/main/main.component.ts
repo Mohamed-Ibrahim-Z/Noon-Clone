@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { CardListComponent } from '../../Shared/card-list/card-list.component';
 import { Product } from '../../../Models/product';
-import { CurrencyPipe } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
+import { CurrencyPipe } from '../../../Pips/currency.pipe';
 
 @Component({
   selector: 'app-main',
