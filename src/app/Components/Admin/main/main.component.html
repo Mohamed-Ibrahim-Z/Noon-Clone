@@ -40,13 +40,16 @@
       <span class="currency">EGP</span>
       {{ product.price | currency }}
     </p>
-    <span class="selling-out-badge"
-      ><img
+    <div class="selling-out-badge">
+      <img
         src="https://f.nooncdn.com/mpcms/EN0001/assets/d2809d6f-556e-414a-b0f9-51cef68684bc.png"
         alt="selling-out"
         class="selling-out-icon"
-      />Selling out fast</span
-    >
+      /><span class="selling-out-text">Selling out fast</span>
+
+      <a routerLink="/productupd/{{ product.id }}" class="update-btn">Update</a>
+      <a class="delete-btn" (click)="deleteProduct()">Delete</a>
+    </div>
     <img
       class="express-badge"
       src="https://f.nooncdn.com/s/app/com/noon/images/fulfilment_express_v3-en.svg"

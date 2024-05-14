@@ -78,7 +78,7 @@
 }
 .product-rating {
   background-color: #ffffff;
-  padding: 1px 5px;
+  padding: 1px 0px;
   border-radius: 10px;
   font-size: 14px;
   color: #333;
@@ -122,7 +122,39 @@
   font-weight: normal;
   margin-top: 4px;
 }
+.selling-out-text {
+  text-wrap: nowrap;
+  margin-right: 5px;
+}
 
 .express-badge {
   margin-top: 7px;
+}
+
+/* ------------------------------------ */
+
+.update-btn,
+.delete-btn {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  margin-right: 10px; /* Adjust as needed */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ffc107; /* Yellow color for Update */
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red color for Delete */
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+  background-color: #e0a800; /* Lighter shade of yellow for Update */
+}
+
+.delete-btn:hover {
+  background-color: #c82333; /* Lighter shade of red for Delete */
 }

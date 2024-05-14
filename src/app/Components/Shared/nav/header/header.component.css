@@ -1,0 +1,43 @@
+.noon-icon {
+  width: 100px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.border-gray {
+  border-right: 1px solid #ccc;
+}
+
+.icon-imgs {
+  margin-left: 0.5rem;
+}
+
+.nav .btn {
+  color: black !important;
+  font-weight: bold !important;
+}
+.nav .btn:hover {
+  color: black !important;
+}
+
+li:hover button {
+  opacity: 0.5;
+}
+
+.down-arrow {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.nav-delivery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.nav-delivery-icon img {
+  width: 33px;
+  height: 25px;
+  margin-right: 4px;
+}
