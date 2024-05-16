@@ -16,14 +16,16 @@ import { FormsModule } from '@angular/forms';
 export class UpdateComponent {
   ID = 0;
   Myproduct: any;
+  category: string = '';
   constructor(
     private categoriesService: CategoriesService,
     private myActived: ActivatedRoute,
     private router: Router
   ) {
     this.ID = myActived.snapshot.params['id'];
-    console.log('myid is', this.ID);
-    this.categoriesService.getCategories('Electronics').subscribe({
+    this.category = myActived.snapshot.params['category'];
+    console.log('myid is', this.ID, 'my category is', this.category);
+    this.categoriesService.getCategories(this.category).subscribe({
       next: (response: any) => {
         // console.log("my res",response)
         this.Myproduct = response[0].products.filter(
@@ -38,7 +40,7 @@ export class UpdateComponent {
   }
   updateProduct() {
     this.categoriesService.updateProductInCategory(
-      'Electronics',
+      this.category,
       this.ID,
       this.Myproduct
     );

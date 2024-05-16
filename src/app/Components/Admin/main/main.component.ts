@@ -21,6 +21,7 @@ import { RatersPipe } from '../../../Pips/raters.pipe';
 })
 export class MainComponent {
   @Input() product: Product;
+  @Input() category: string = '';
   constructor(
     private categoriesService: CategoriesService,
     private router: Router
@@ -30,7 +31,7 @@ export class MainComponent {
 
   deleteProduct() {
     this.categoriesService.deleteProductInCategory(
-      'Electronics',
+      this.category,
       this.product.id
     );
     this.router.navigate(['/main']);

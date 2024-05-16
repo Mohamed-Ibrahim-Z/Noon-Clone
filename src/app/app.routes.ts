@@ -5,11 +5,13 @@ import { CardListComponent } from './Components/Shared/card-list/card-list.compo
 import { Component } from '@angular/core';
 import { AddComponent } from './Components/Admin/add/add.component';
 import { CategoryListComponent } from './Components/category-list/category-list.component';
+import { CategoryListAdminComponent } from './Components/Admin/category-list-admin/category-list-admin.component';
 
 export const routes: Routes = [
   { path: '', component: CategoryListComponent, pathMatch: 'full' },
-  { path: 'productupd/:id', component: UpdateComponent },
-  { path: 'main', component: MainlistComponent },
+
+  { path: 'productupd/:category/:id', component: UpdateComponent },
+  { path: 'main', component: CategoryListAdminComponent },
   { path: 'add', component: AddComponent },
   { path: '**', redirectTo: '' },
 ];

@@ -1,6 +1,5 @@
 <div class="cards-list">
-    @for (product of products; track $index) {
-    <app-main [product]="product"></app-main >
-    }
-  </div>
-  
+  @for (product of products; track $index) {
+  <app-main [product]="product" [category]="category"></app-main>
+  }
+</div>

@@ -49,7 +49,11 @@
         class="selling-out-icon"
       /><span class="selling-out-text">Selling out fast</span>
 
-      <a routerLink="/productupd/{{ product.id }}" class="update-btn">Update</a>
+      <a
+        routerLink="/productupd/{{ category }}/{{ product.id }}"
+        class="update-btn"
+        >Update</a
+      >
       <a class="delete-btn" (click)="deleteProduct()">Delete</a>
     </div>
     <img
