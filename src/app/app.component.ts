@@ -24,6 +24,7 @@ import { MainlistComponent } from './Components/Admin/mainlist/mainlist.componen
     NavbarComponent,
     MainlistComponent,
     UpdateComponent,
+    CategoriesComponent,
   ],
   providers: [CategoriesComponent],
   templateUrl: './app.component.html',

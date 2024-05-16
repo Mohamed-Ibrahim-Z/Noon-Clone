@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CardListComponent } from '../../Shared/card-list/card-list.component';
 import { Product } from '../../../Models/product';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { CurrencyPipe } from '../../../Pips/currency.pipe';
 import { CategoriesService } from '../../../Services/categories.service';
 import { RatersPipe } from '../../../Pips/raters.pipe';
@@ -21,7 +21,10 @@ import { RatersPipe } from '../../../Pips/raters.pipe';
 })
 export class MainComponent {
   @Input() product: Product;
-  constructor(private categoriesService: CategoriesService) {
+  constructor(
+    private categoriesService: CategoriesService,
+    private router: Router
+  ) {
     this.product = new Product(0, 'X', 1000, 1, 4000, 4.5, '');
   }
 
@@ -30,6 +33,6 @@ export class MainComponent {
       'Electronics',
       this.product.id
     );
-    // this.router.navigate(['/main']);
+    this.router.navigate(['/main']);
   }
 }

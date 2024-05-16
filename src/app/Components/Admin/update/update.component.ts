@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CategoriesService } from '../../../Services/categories.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,8 @@ export class UpdateComponent {
   Myproduct: any;
   constructor(
     private categoriesService: CategoriesService,
-    private myActived: ActivatedRoute
+    private myActived: ActivatedRoute,
+    private router: Router
   ) {
     this.ID = myActived.snapshot.params['id'];
     console.log('myid is', this.ID);
@@ -41,24 +42,5 @@ export class UpdateComponent {
       this.ID,
       this.Myproduct
     );
-    console.log('Updated Successfully!');
   }
-  // updateProduct() {
-  //   // Assuming updatedProductData contains the updated product information
-  //   console.log("im in update in ts")
-  //   const updatedProductData = this.Myproduct;
-  //   this.categoriesService.updateProductInCategory('Electronics', this.ID, updatedProductData);
-  // }
-
-  // update(){
-  //   this.categoriesService.updatedata(this.Myproduct,"Electronics").subscribe({
-  //     next: (response: any) => {
-  //       console.log("my update")
-  //     },
-  //     error: (error) => {
-  //       console.log(error);
-  //     },
-  //   });
-
-  // }
 }
