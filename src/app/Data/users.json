@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "isAdmin": true
+    },
+    {
+      "id": "2",
+      "name": "Youssef Saad",
+      "email": "youssef@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    },
+    {
+      "id": "3",
+      "name": "Mohamed Ibrahim",
+      "email": "mohamed@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    },
+    {
+      "id": "3",
+      "name": "Abdelrahman Saber",
+      "email": "Saber@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    },
+    {
+      "id": "3",
+      "name": "Noor Essam",
+      "email": "Noor@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    }
+  ]
+}

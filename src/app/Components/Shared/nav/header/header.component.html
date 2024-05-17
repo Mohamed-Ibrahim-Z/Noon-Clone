@@ -59,7 +59,18 @@
             </button>
           </li>
           <li class="border-gray">
-            <button type="button" class="btn">
+            @if (loggedIn) {
+            <button type="button" class="btn" (click)="logout()">
+              <span class="userText">{{ firstName }}</span>
+              <img
+                src="https://f.nooncdn.com/s/app/com/noon/icons/user_thin.svg"
+                alt="login login img"
+                class="img-fluid icon-imgs"
+                style="color: black; width: 17px"
+              />
+            </button>
+            } @else {
+            <button type="button" class="btn" (click)="routeToLogin()">
               <span class="userText">Log in</span>
               <img
                 src="https://f.nooncdn.com/s/app/com/noon/icons/user_thin.svg"
@@ -68,6 +79,7 @@
                 style="color: black; width: 17px"
               />
             </button>
+            }
           </li>
           <li class="border-gray">
             <button type="button" class="btn">

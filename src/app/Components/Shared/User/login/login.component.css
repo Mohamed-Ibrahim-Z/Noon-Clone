@@ -1,0 +1,36 @@
+.container {
+  margin-top: 50px;
+}
+
+.panel {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  text-align: center;
+}
+
+.panel-body {
+  padding: 20px;
+}
+
+.alert {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  width: 50%;
+}

@@ -5,6 +5,9 @@ import { Category } from '../../../Models/category';
 import { Product } from '../../../Models/product';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
+import { User } from '../../../Models/User';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { UserService } from '../../../Services/user.service';
 
 @Component({
   selector: 'app-card-list',
@@ -18,29 +21,48 @@ export class CardListComponent implements OnInit {
   cat: Category;
   products: Product[] = [];
   @Input() category: string = '';
-  constructor(private categoriesService: CategoriesService) {
+  currentUser: any;
+  constructor(
+    private categoriesService: CategoriesService,
+    private router: Router,
+    private rout: ActivatedRoute
+  ) {
+    console.log('CardListComponent Initialized');
     this.cat = new Category(0, '', []);
+    if (!UserService.currentUser) {
+      this.router.navigate(['/login']);
+    }
   }
 
   ngOnInit() {
-    if (this.category === '') return;
-    console.log('category: ', this.category);
-    this.categoriesService.getCategories(this.category).subscribe({
-      next: (data: any) => {
-        this.cat = data[0];
-        this.products = data[0].products;
-      },
-    });
-    let id = 1;
-    this.categoriesService.getCategories(this.category).subscribe({
-      next: (response: any) => {
-        console.log(
-          response[0].products.filter((product: any) => product.id === id)[0]
-        );
-      },
-      error: (error) => {
-        console.log(error);
-      },
+    this.rout.paramMap.subscribe((params: ParamMap) => {
+      let categoryParam = params.get('category');
+      if (categoryParam) {
+        this.categoriesService.getCategories(categoryParam).subscribe({
+          next: (data: any) => {
+            this.cat = data[0];
+            this.products = data[0].products;
+          },
+          error: (error: any) => {
+            console.error('Error fetching categories:', error);
+          },
+        });
+      } else {
+        if (this.category === '') {
+          this.router.navigate(['/']);
+        }
+        if (this.category !== '') {
+          this.categoriesService.getCategories(this.category).subscribe({
+            next: (data: any) => {
+              this.cat = data[0];
+              this.products = data[0].products;
+            },
+            error: (error: any) => {
+              console.error('Error fetching categories:', error);
+            },
+          });
+        }
+      }
     });
   }
 }

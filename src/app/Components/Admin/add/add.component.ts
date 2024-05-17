@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CategoriesService } from '../../../Services/categories.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Product } from '../../../Models/product';
+import { UserService } from '../../../Services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -17,10 +19,18 @@ export class AddComponent {
   name: string = '';
   price: number | null = null;
   category: string = '';
-
-  constructor(private categoriesService: CategoriesService) {}
+  isAdmin = true;
+  constructor(
+    private categoriesService: CategoriesService,
+    private router: Router
+  ) {
+    if (UserService.currentUser === null) {
+      this.router.navigate(['/login']);
+    } else if (UserService.currentUser.isAdmin === false) {
+      this.isAdmin = false;
+    }
+  }
   addProduct() {
-    console.log('Here');
     if (this.img && this.name && this.price && this.category) {
       let product: Product = {
         id: 0,

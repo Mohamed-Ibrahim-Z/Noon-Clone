@@ -1,8 +1,11 @@
-@for (category of categories; track $index) { @if (category == 'BeautyHealth') {
+@if (!isAdmin) {
+<h1 class="text-center">You are not authorized to view this page</h1>
+} @else { @for (category of categories; track $index) { @if (category ==
+'BeautyHealth') {
 <h2 class="category-title">{{ "Beauty & Health" }}</h2>
 
 } @else {
 <h2 class="category-title">{{ category }}</h2>
 }
 <app-mainlist [category]="category"></app-mainlist>
-}
+} }
