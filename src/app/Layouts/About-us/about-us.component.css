@@ -8,7 +8,7 @@
 
 .team-member {
   width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
@@ -48,7 +48,27 @@ img {
   width: 100%;
   height: 50%;
 }
-
+.team-supervisor {
+  width: 250px;
+  height: 400px;
+  text-align: center;
+  animation: borderGrow 1s forwards;
+  margin: -100px auto;
+}
+.team-supervisor img {
+  width: 100%;
+  border-radius: 50%;
+  animation: imageGrow 1s ease-out forwards;
+}
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.team-supervisor h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
 @keyframes borderGrow {
   from {
     border-color: transparent;
